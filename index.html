@@ -55,9 +55,20 @@
                         <a href="#gallery" class="text-gray-700 hover:text-amber-600 transition">Gallery</a>
                         <a href="#contact" class="text-gray-700 hover:text-amber-600 transition">Contact</a>
                     </div>
-                    <button class="md:hidden focus:outline-none">
+                    <button id="mobile-menu-button" aria-expanded="false" class="md:hidden focus:outline-none">
                         <i data-feather="menu"></i>
                     </button>
+                </div>
+
+                <!-- Mobile menu (hidden by default) -->
+                <div id="mobile-menu" class="hidden md:hidden mt-2">
+                    <div class="flex flex-col px-2 pb-4">
+                        <a href="#" class="block py-2 px-3 rounded hover:bg-gray-100">Home</a>
+                        <a href="#about" class="block py-2 px-3 rounded hover:bg-gray-100">About</a>
+                        <a href="#menu" class="block py-2 px-3 rounded hover:bg-gray-100">Menu</a>
+                        <a href="#gallery" class="block py-2 px-3 rounded hover:bg-gray-100">Gallery</a>
+                        <a href="#contact" class="block py-2 px-3 rounded hover:bg-gray-100">Contact</a>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -544,7 +555,7 @@
         </footer>
 
         <script>
-            AOS.init({duration: 800, easing: 'ease-in-out', once: true});
+            AOS.init({duration: 800, easing: 'ease-in-out', once: false, mirror: true});
 
             VANTA.WAVES({
                 el: "#vanta-bg",
@@ -564,40 +575,57 @@
 
             feather.replace();
 
-            // set footer year
+            // Mobile menu toggle (updates feather icon on toggle)
             (function () {
-                const fy = document.getElementById('footer-year');
-                if (fy) 
-                    fy.textContent = new Date().getFullYear();
-                }
-            )();
-
-            // WhatsApp reservation handler
-            (function () {
-                const form = document.getElementById('reservation-form');
-                if (!form) 
-                    return;
-                form.addEventListener('submit', function (e) {
-                    e.preventDefault();
-                    const data = new FormData(form);
-                    const name = data.get('fullName') || 'N/A';
-                    const email = data.get('email') || 'N/A';
-                    const phone = data.get('phone') || 'N/A';
-                    const guests = data.get('guests') || 'N/A';
-                    const date = data.get('date') || 'N/A';
-                    const time = data.get('time') || 'N/A';
-                    const requests = data.get('requests') || 'None';
-
-                    const message = `Reservation request from Sweeven Cafe\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nGuests: ${guests}\nDate: ${date}\nTime: ${time}\nRequests: ${requests}`;
-
-                    // Kenyan number in international format (no plus sign)
-                    const waPhone = '254727707399';
-                    const waUrl = `https://wa.me/${waPhone}?text=${encodeURIComponent(message)}`;
-
-                    // open WhatsApp (new tab)
-                    window.open(waUrl, '_blank');
+                const btn = document.getElementById('mobile-menu-button');
+                const menu = document.getElementById('mobile-menu');
+                if (!btn || !menu) return;
+                btn.addEventListener('click', function () {
+                    // toggle visibility
+                    menu.classList.toggle('hidden');
+                    const expanded = !menu.classList.contains('hidden');
+                    btn.setAttribute('aria-expanded', expanded);
+                    // swap icon between menu and x
+                    const icon = btn.querySelector('i');
+                    if (icon) icon.setAttribute('data-feather', expanded ? 'x' : 'menu');
+                    feather.replace();
                 });
             })();
+
+             // set footer year
+             (function () {
+                 const fy = document.getElementById('footer-year');
+                 if (fy) 
+                     fy.textContent = new Date().getFullYear();
+                 }
+             )();
+
+             // WhatsApp reservation handler
+             (function () {
+                 const form = document.getElementById('reservation-form');
+                 if (!form) 
+                     return;
+                 form.addEventListener('submit', function (e) {
+                     e.preventDefault();
+                     const data = new FormData(form);
+                     const name = data.get('fullName') || 'N/A';
+                     const email = data.get('email') || 'N/A';
+                     const phone = data.get('phone') || 'N/A';
+                     const guests = data.get('guests') || 'N/A';
+                     const date = data.get('date') || 'N/A';
+                     const time = data.get('time') || 'N/A';
+                     const requests = data.get('requests') || 'None';
+
+                     const message = `Reservation request from Sweeven Cafe\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nGuests: ${guests}\nDate: ${date}\nTime: ${time}\nRequests: ${requests}`;
+
+                     // Kenyan number in international format (no plus sign)
+                     const waPhone = '254727707399';
+                     const waUrl = `https://wa.me/${waPhone}?text=${encodeURIComponent(message)}`;
+
+                     // open WhatsApp (new tab)
+                     window.open(waUrl, '_blank');
+                 });
+             })();
         </script>
     </body>
 </html>
