@@ -6,7 +6,39 @@
   "background_color": "#ffffff",
   "theme_color": "#da9b4e",
   "icons": [
-    { "src": "/assets/icons/android-chrome-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "/assets/icons/android-chrome-512.png", "sizes": "512x512", "type": "image/png" }
+    {
+      "src": "/assets/icons/android-chrome-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/android-chrome-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "description": "Sweeven Cafe in Tatu City, Kenya serves craft coffee, fine dining menus, private events, and takeaway.",
+  "lang": "en-KE",
+  "scope": "/",
+  "categories": [
+    "restaurant",
+    "food",
+    "cafe"
+  ],
+  "orientation": "portrait-primary",
+  "dir": "ltr",
+  "shortcuts": [
+    {
+      "name": "View Menu",
+      "url": "/#menu"
+    },
+    {
+      "name": "Book a Table",
+      "url": "/#reservation"
+    },
+    {
+      "name": "Contact Sweeven Cafe",
+      "url": "/#contact"
+    }
   ]
 }

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sweeven.co.ke/sitemap.xml
