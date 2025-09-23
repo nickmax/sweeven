@@ -216,7 +216,7 @@
                     </div>
                     <div class="w-full md:w-auto flex justify-center" data-aos="fade-left" data-aos-delay="150">
                         <div class="relative w-full md:w-[22rem] max-w-full rounded-2xl overflow-hidden shadow-2xl" style="aspect-ratio: 9 / 16;">
-                            <video class="absolute inset-0 w-full h-full object-cover" controls preload="none" playsinline muted poster="assets/images/location/IMG_5367.jpeg" data-video-src="assets/videos/Opening%20Up.mp4">
+                            <video class="absolute inset-0 w-full h-full object-cover" controls preload="none" playsinline muted autoplay poster="assets/images/location/IMG_5367.jpeg" data-video-src="assets/videos/Opening%20Up.mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
@@ -620,7 +620,7 @@
                             </div>
                         </div>
                         <div class="relative overflow-hidden rounded-lg shadow-lg group" data-aos="fade-up" data-aos-delay="100">
-                            <img src="assets/images/location/IMG_5405-min.jpegg" alt="Barista preparing coffee inside Sweeven Cafe" loading="lazy" decoding="async" class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
+                            <img src="assets/images/location/IMG_5405-min.jpeg" alt="Barista preparing coffee inside Sweeven Cafe" loading="lazy" decoding="async" class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
                             <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
                                 <i data-feather="zoom-in" class="text-white text-3xl"></i>
                             </div>
@@ -656,9 +656,9 @@
                             <button class="w-14 h-10 rounded overflow-hidden border-2 border-transparent focus:outline-none" data-index="2"><img src="assets/images/006a576e-3031-4672-b186-e3b130c96bfa.JPG" class="w-full h-full object-cover" loading="lazy" decoding="async" alt="Preview of signature dessert"></button>
                             <button class="w-14 h-10 rounded overflow-hidden border-2 border-transparent focus:outline-none" data-index="3"><img src="assets/images/08e601bf-e96e-4c84-a240-887499805150.JPG" class="w-full h-full object-cover" loading="lazy" decoding="async" alt="Preview of latte art"></button>
                             <button class="w-14 h-10 rounded overflow-hidden border-2 border-transparent focus:outline-none" data-index="4"><img src="assets/images/a53dca46-b9c7-4df9-88ca-ea5ba6eb8c17 4.JPG" class="w-full h-full object-cover" loading="lazy" decoding="async" alt="Preview of chef plating a course"></button>
-                            <button class="w-14 h-10 rounded overflow-hidden border-2 border-transparent focus:outline-none" data-index="5"><img src="assets/images/location/IMG_5380.jpeg" class="w-full h-full object-cover" loading="lazy" decoding="async" alt="Preview of Sweeven Cafe pastry counter"></button>
-                            <button class="w-14 h-10 rounded overflow-hidden border-2 border-transparent focus:outline-none" data-index="6"><img src="assets/images/location/IMG_5405.jpeg" class="w-full h-full object-cover" loading="lazy" decoding="async" alt="Preview of Sweeven Cafe barista scene"></button>
-                            <button class="w-14 h-10 rounded overflow-hidden border-2 border-transparent focus:outline-none" data-index="7"><img src="assets/images/location/Location Pic 2.JPG" class="w-full h-full object-cover" loading="lazy" decoding="async" alt="Preview of Sweeven Cafe entrance"></button>
+                            <button class="w-14 h-10 rounded overflow-hidden border-2 border-transparent focus:outline-none" data-index="5"><img src="assets/images/location/IMG_5380-min.jpeg" class="w-full h-full object-cover" loading="lazy" decoding="async" alt="Preview of Sweeven Cafe pastry counter"></button>
+                            <button class="w-14 h-10 rounded overflow-hidden border-2 border-transparent focus:outline-none" data-index="6"><img src="assets/images/location/IMG_5405-min.jpeg" class="w-full h-full object-cover" loading="lazy" decoding="async" alt="Preview of Sweeven Cafe barista scene"></button>
+                            <button class="w-14 h-10 rounded overflow-hidden border-2 border-transparent focus:outline-none" data-index="7"><img src="assets/images/location/Location Pic 2-min.JPG" class="w-full h-full object-cover" loading="lazy" decoding="async" alt="Preview of Sweeven Cafe entrance"></button>
                         </div>
                     </div>
                 </div>
@@ -932,13 +932,21 @@
         </footer>
 
         <script>
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true,
-                mirror: false,
-                disable: 'mobile'
-            });
+            const initAOS = () => {
+                if (!window.AOS) 
+                    return;
+                window.AOS.init({
+                    duration: 800,
+                    easing: 'ease-in-out',
+                    once: false,
+                    mirror: true
+                });
+            };
+            if (document.readyState === 'complete') {
+                initAOS();
+            } else {
+                window.addEventListener('load', initAOS, {once: true});
+            }
 
             // load Vanta waves only on larger screens to keep mobile steady
             (function () {
@@ -1006,7 +1014,16 @@
                 });
             })();
 
-            feather.replace();
+            const runFeather = () => {
+                if (window.feather && typeof window.feather.replace === 'function') {
+                    window.feather.replace();
+                }
+            };
+            if (document.readyState === 'complete') {
+                runFeather();
+            } else {
+                window.addEventListener('load', runFeather, {once: true});
+            }
 
             // Mobile menu toggle (updates feather icon on toggle)
             (function () {
@@ -1030,19 +1047,21 @@
                             'data-feather', expanded
                             ? 'x'
                             : 'menu');
-                    feather.replace();
+                    if (window.feather && typeof window.feather.replace === 'function') {
+                        window.feather.replace();
+                    }
                 });
             })();
 
             // set footer year
             (function () {
                 const fy = document.getElementById('footer-year');
-                if (fy) 
+                if (fy) {
                     fy.textContent = new Date().getFullYear();
                 }
-            )();
+            })();
 
-            // lazy load marketing video to keep initial payload light
+            // lazy load marketing video and autoplay when visible
             (function () {
                 const video = document.querySelector('video[data-video-src]');
                 if (!video) 
@@ -1053,18 +1072,33 @@
                     video.src = video.dataset.videoSrc;
                     video.dataset.loaded = 'true';
                 };
+                const playVideo = () => {
+                    video.muted = true;
+                    const promise = video.play();
+                    if (promise && typeof promise.catch === 'function') {
+                        promise.catch(() => {});
+                    }
+                };
+                const pauseVideo = () => {
+                    if (video.paused) 
+                        return;
+                    video.pause();
+                };
                 if ('IntersectionObserver' in window) {
                     const observer = new IntersectionObserver((entries) => {
                         entries.forEach((entry) => {
                             if (entry.isIntersecting) {
                                 loadVideo();
-                                observer.disconnect();
+                                playVideo();
+                            } else {
+                                pauseVideo();
                             }
                         });
-                    }, {rootMargin: '200px'});
+                    }, {rootMargin: '100px', threshold: 0.3});
                     observer.observe(video);
                 } else {
                     loadVideo();
+                    playVideo();
                 }
             })();
 
@@ -1103,9 +1137,9 @@
                     'assets/images/006a576e-3031-4672-b186-e3b130c96bfa.JPG',
                     'assets/images/08e601bf-e96e-4c84-a240-887499805150.JPG',
                     'assets/images/a53dca46-b9c7-4df9-88ca-ea5ba6eb8c17 4.JPG',
-                    'assets/images/location/IMG_5380.jpeg',
-                    'assets/images/location/IMG_5405.jpeg',
-                    'assets/images/location/Location Pic 2.JPG',
+                    'assets/images/location/IMG_5380-min.jpeg',
+                    'assets/images/location/IMG_5405-min.jpeg',
+                    'assets/images/location/Location Pic 2-min.JPG',
                     'assets/images/d103c065-f38e-4ac9-880c-219de93cd6ad 2.JPG',
                     'assets/images/f35b046b-7d97-4a09-8b52-4af6e2b473f6.JPG',
                     'assets/images/d49f501c-1f26-4158-a6bf-ef512e686f3b.JPG',
