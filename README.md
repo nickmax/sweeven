@@ -1,41 +1,21 @@
-# Sweeven Menu CMS
+# Sweeven Café Site
 
-This project now includes a lightweight content management system so the Sweeven Café menu can be edited without touching the HTML.
+This repository contains the static marketing site for Sweeven Café, including the public menu. Everything is built with vanilla HTML, Tailwind via CDN, and a lightweight Node server for local previews.
 
-## Prerequisites
-
-- Node.js 18+ (comes with `npm`)
-
-## Install & Run
+## Getting Started
 
 ```bash
 npm install
 npm start
 ```
 
-The command starts a small Node server on <http://localhost:3000>. It serves:
+The `start` script launches a simple static server on <http://localhost:3000>. Open the address in your browser to browse the home page (`index.html`) or the dedicated fullscreen menu (`menu.html`).
 
-- the public site (`/`)
-- a JSON API at `/api/menu`
-- the CMS dashboard at `/sweeven-admin`
+## Project Structure
 
-### Optional: Protect the CMS
+- `index.html` – landing page with the embedded Canva menu preview.
+- `menu.html` – standalone full-screen menu experience.
+- `assets/` – images, icons, and other static assets served by the site.
+- `server.js` – tiny Node server used for local development previews.
 
-Set an environment variable before starting the server to require a token for edits:
-
-```bash
-CMS_TOKEN=your-secret npm start
-```
-
-When the CMS prompts for a token, enter the same value and click **Save token**.
-
-## Managing the Menu
-
-1. Visit <http://localhost:3000/sweeven-admin>.
-2. Sign in with the admin credentials supplied for your deployment.
-3. (Optional) Enter the token if one is configured.
-4. Edit categories, prices, names, and descriptions.
-5. Click **Save changes** to persist updates. The menu is stored in `data/menu.json`.
-6. Refresh the public page—menu updates render automatically through the API.
-
-The public site falls back to the bundled `data/menu.json` if the API is offline, so the menu still loads during maintenance.
+All menu content now lives directly in the HTML pages—no CMS, admin dashboard, or JSON API is required. Update copy or imagery by editing the corresponding markup files.
