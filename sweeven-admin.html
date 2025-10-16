@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sweeven Menu CMS</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    </head>
+    <body class="bg-gray-100 text-gray-900 min-h-screen">
+        <div id="login-screen" class="min-h-screen flex items-center justify-center px-6">
+            <div class="max-w-md w-full bg-white shadow-xl rounded-xl p-8 border border-gray-100">
+                <div class="text-center mb-6">
+                    <h1 class="text-2xl font-semibold">Sweeven Admin Access</h1>
+                    <p class="text-gray-600 mt-2 text-sm">Please sign in to manage the Sweeven menu.</p>
+                </div>
+                <form id="login-form" class="space-y-4">
+                    <label class="block text-sm font-medium text-gray-700">
+                        Username
+                        <input id="login-username" type="text" autocomplete="username" placeholder="Username" class="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent" required>
+                    </label>
+                    <label class="block text-sm font-medium text-gray-700">
+                        Password
+                        <input id="login-password" type="password" autocomplete="current-password" placeholder="Password" class="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent" required>
+                    </label>
+                    <button type="submit" class="w-full px-4 py-3 bg-amber-600 text-white rounded-lg shadow hover:bg-amber-700 transition">Log in</button>
+                </form>
+                <p id="login-feedback" class="mt-4 text-sm text-red-600 text-center hidden">Invalid credentials. Try again.</p>
+            </div>
+        </div>
+
+        <div id="cms-app" class="hidden">
+            <a href="/" class="inline-flex items-center gap-2 text-sm text-amber-600 hover:text-amber-700 px-6 pt-6">
+                <span aria-hidden="true">←</span>
+                Back to site
+            </a>
+            <div class="max-w-6xl mx-auto px-6 pb-16">
+                <header class="mt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                    <div>
+                        <h2 class="text-3xl font-semibold">Sweeven Menu CMS</h2>
+                        <p class="text-gray-600 mt-2 max-w-2xl">Update categories, prices, and descriptions without touching code. Remember to save after making changes.</p>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-3">
+                        <button id="refresh-menu" class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-200 transition">Reload</button>
+                        <button id="add-category" class="px-4 py-2 border border-amber-500 text-amber-600 rounded-lg hover:bg-amber-50 transition">Add category</button>
+                        <div class="flex items-center gap-2">
+                            <button id="save-menu" class="px-4 py-2 bg-amber-600 text-white rounded-lg shadow hover:bg-amber-700 transition disabled:opacity-60 disabled:cursor-not-allowed" disabled>Save changes</button>
+                            <span id="dirty-indicator" class="text-sm text-amber-600 hidden">Unsaved changes</span>
+                        </div>
+                    </div>
+                </header>
+
+                <section class="mt-10 bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+                    <h3 class="text-lg font-semibold mb-4">CMS Access Token</h3>
+                    <p class="text-sm text-gray-600 mb-4">If your server is configured with a <code class="bg-gray-100 px-1 rounded text-xs">CMS_TOKEN</code>, enter it here. The token is stored in this browser only.</p>
+                    <form id="token-form" class="flex flex-col gap-4 md:flex-row md:items-end">
+                        <label class="flex-1 text-sm">
+                            <span class="block text-gray-700 mb-2">Token</span>
+                            <input id="token-input" type="password" placeholder="Optional secret token" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent">
+                        </label>
+                        <div class="flex gap-3">
+                            <button type="submit" class="px-4 py-3 bg-gray-900 text-white rounded-lg hover:bg-black transition">Save token</button>
+                            <button type="button" id="clear-token" class="px-4 py-3 border border-gray-300 rounded-lg hover:bg-gray-100 transition">Clear</button>
+                        </div>
+                    </form>
+                    <p id="token-feedback" class="mt-3 text-sm text-gray-500"></p>
+                </section>
+
+                <p id="admin-status" class="mt-6 text-sm text-gray-600">Loading menu...</p>
+
+                <section id="categories-container" class="mt-8 space-y-8"></section>
+            </div>
+        </div>
+
+        <script src="assets/js/admin.js" defer></script>
+    </body>
+</html>

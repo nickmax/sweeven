@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweeven Café | Menu</title>
+    <meta name="description" content="Explore the full Sweeven Café menu featuring signature dishes, desserts, and beverages.">
+
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            min-height: 100vh;
+            font-family: 'Playfair Display', serif;
+            background: radial-gradient(circle at top, rgba(253, 230, 138, 0.08), transparent 45%), linear-gradient(160deg, #0f172a, #1f2937 55%, #0f172a);
+            color: #e2e8f0;
+            display: flex;
+            flex-direction: column;
+        }
+        .glass-card {
+            background: linear-gradient(135deg, rgba(148, 163, 184, 0.12), rgba(148, 163, 184, 0.04));
+            border: 1px solid rgba(148, 163, 184, 0.16);
+            box-shadow: 0 28px 60px rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(26px);
+        }
+        .menu-embed {
+            position: relative;
+            padding-top: 141.4286%;
+            border-radius: 1.5rem;
+            overflow: hidden;
+        }
+        .menu-embed iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .floating-orb {
+            position: absolute;
+            border-radius: 9999px;
+            filter: blur(80px);
+            opacity: 0.4;
+        }
+    </style>
+</head>
+<body>
+    <div class="absolute top-[-10rem] left-[-6rem] w-72 h-72 floating-orb bg-amber-400/30"></div>
+    <div class="absolute bottom-[-8rem] right-[-4rem] w-80 h-80 floating-orb bg-rose-400/30"></div>
+
+    <header class="relative z-10">
+        <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-8 text-sm uppercase tracking-[0.2em] text-slate-200">
+            <a href="index.html" class="flex items-center gap-2 transition hover:text-amber-400" aria-label="Back to homepage">
+                <span class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-500/40">
+                    ←
+                </span>
+                <span>Back Home</span>
+            </a>
+            <span class="hidden md:inline text-slate-300/70">Sweeven Café</span>
+        </nav>
+    </header>
+
+    <main id="main-content" class="relative z-10 flex-1">
+        <section class="mx-auto max-w-5xl px-6 pb-20 pt-10 sm:pt-16 md:pt-20">
+            <div class="glass-card rounded-3xl p-8 sm:p-12">
+                <div class="mx-auto max-w-3xl text-center">
+                    <p class="text-xs uppercase tracking-[0.35em] text-amber-300/90">Curated Flavours</p>
+                    <h1 class="mt-4 text-4xl font-semibold text-white sm:text-5xl">Our Seasonally Inspired Menu</h1>
+                    <p class="mx-auto mt-4 max-w-2xl text-base text-slate-200/80 sm:text-lg">
+                        Discover chef-crafted pairings that celebrate local ingredients and global techniques. Browse each page or open the menu in a new tab for a closer look.
+                    </p>
+                </div>
+
+                <div class="mt-12">
+                    <div class="menu-embed">
+                        <iframe loading="lazy" src="https://www.canva.com/design/DAGzuTKP1KA/JwsU3vLDfLludMlUoQW-jg/view?embed" allowfullscreen allow="fullscreen">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex justify-center text-xs uppercase tracking-[0.3em] text-slate-400/70">
+                    <span>Last updated · 2025</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="relative z-10 border-t border-slate-700/50 bg-slate-950/60">
+        <div class="mx-auto flex max-w-5xl flex-col items-center justify-between gap-6 px-6 py-8 text-sm text-slate-400/80 sm:flex-row">
+            <p>© <span id="year"></span> Sweeven Café. All rights reserved.</p>
+            <a class="transition hover:text-amber-300" href="mailto:hello@sweeven.co.ke">hello@sweeven.co.ke</a>
+        </div>
+    </footer>
+
+    <script>
+        // Update footer year automatically
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

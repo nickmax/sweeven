@@ -73,11 +73,18 @@
             .hero-height {
                 height: 90vh;
             }
-            .menu-item:hover .menu-overlay {
-                opacity: 1;
+            .menu-embed {
+                position: relative;
+                padding-top: 141.4286%;
+                border-radius: 1.5rem;
+                overflow: hidden;
             }
-            .menu-overlay {
-                transition: all 0.3s ease;
+            .menu-embed iframe {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                border: none;
             }
             .reservation-form input,
             .reservation-form select {
@@ -219,367 +226,113 @@
         </section>
 
         <!-- Menu Section -->
-        <section id="menu" class="py-20 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16" data-aos="fade-up">
-                    <h2 class="text-3xl font-playfair font-bold mb-4 text-gray-800">Our Menu</h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">Taste Nairobi's favourite chapati wraps, artisanal bites, and specialty coffees freshly made at Sweeven Cafe.</p>
+        <section id="menu" class="relative overflow-hidden bg-slate-900 py-24 text-slate-100">
+            <div class="pointer-events-none absolute -top-32 left-1/3 h-72 w-72 -translate-x-1/2 rounded-full bg-amber-500/25 blur-3xl"></div>
+            <div class="pointer-events-none absolute bottom-[-10rem] right-[-6rem] h-96 w-96 rounded-full bg-rose-500/20 blur-3xl"></div>
+            <div class="pointer-events-none absolute top-1/3 right-1/4 h-52 w-52 rounded-full bg-sky-500/10 blur-3xl"></div>
+
+            <div class="container relative z-10 mx-auto px-6">
+                <div class="mx-auto max-w-3xl text-center" data-aos="fade-up">
+                    <p class="text-xs uppercase tracking-[0.35em] text-amber-300/90">Curated Flavours</p>
+                    <h2 class="mt-4 text-3xl font-playfair font-bold sm:text-4xl">Our Seasonally Inspired Menu</h2>
+                    <p class="mt-4 text-base text-slate-200/80 sm:text-lg">
+                        From slow-braised chapati wraps to signature brews, every page is crafted to celebrate Kenyan ingredients and global flair.
+                    </p>
                 </div>
 
-                <div class="flex flex-wrap -mx-4">
-                    <!-- Sweeven Favorites -->
-                    <div class="w-full md:w-1/3 px-4 mb-8" data-aos="fade-up">
-                        <div class="bg-white p-6 rounded-lg shadow-md h-full">
-                            <div class="flex items-center mb-6">
-                                <i data-feather="star" class="text-amber-600 mr-3"></i>
-                                <h3 class="text-xl font-playfair font-bold">Sweeven Favorites</h3>
-                            </div>
-                            <div class="space-y-6">
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Mama Sweeven Chapati Chicken Wrap</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 400/-</span>
-                                    </div>
-                                    <p class="text-sm text-gray-500">Slow cooked pulled chicken breast in tomato sauce, served with golden chips.</p>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Mama Sweeven Chapati Beef Wrap</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 450/-</span>
-                                    </div>
-                                    <p class="text-sm text-gray-500">Slow cooked pulled beef in a rich house sauce with chips on the side.</p>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Loaded Pulled Beef Mandazi</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 450/-</span>
-                                    </div>
-                                    <p class="text-sm text-gray-500">Signature mandazi stacked with tender pulled beef and chef toppings.</p>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Loaded Pulled Chicken Mandazi</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 400/-</span>
-                                    </div>
-                                    <p class="text-sm text-gray-500">Mandazi piled high with pulled chicken in tomato sauce plus toppings.</p>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Egg Bacon Wrap</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 300/-</span>
-                                    </div>
-                                    <p class="text-sm text-gray-500">Fluffy scrambled eggs, crispy bacon, and juicy tomatoes wrapped in a warm tortilla. The ultimate breakfast (or anytime) fix.</p>
-                                </div>
-                            </div>
+                <div class="mt-16 grid gap-10 lg:grid-cols-[minmax(0,1.2fr),minmax(0,0.8fr)] lg:items-start">
+                    <div class="rounded-[2rem] border border-white/10 bg-white/5 p-5 shadow-2xl backdrop-blur-xl" data-aos="fade-up">
+                        <div class="menu-embed bg-slate-900/40">
+                            <iframe loading="lazy" src="https://www.canva.com/design/DAGzuTKP1KA/JwsU3vLDfLludMlUoQW-jg/view?embed" allowfullscreen allow="fullscreen"></iframe>
+                        </div>
+                        <div class="mt-6 flex flex-col items-center gap-3 text-xs uppercase tracking-[0.3em] text-slate-300/80 sm:flex-row sm:justify-between">
+                            <span>Last updated · 2025</span>
+                            <a href="menu.html" class="inline-flex items-center gap-2 rounded-full border border-amber-300/50 bg-amber-300/10 px-6 py-2 font-medium text-amber-200 transition hover:border-amber-300 hover:bg-amber-300/20">
+                                Open Full Menu
+                                <i data-feather="external-link" class="h-4 w-4"></i>
+                            </a>
                         </div>
                     </div>
 
-                    <!-- Sweeven Bites -->
-                    <div class="w-full md:w-1/3 px-4 mb-8" data-aos="fade-up" data-aos-delay="100">
-                        <div class="bg-white p-6 rounded-lg shadow-md h-full">
-                            <div class="flex items-center mb-6">
-                                <i data-feather="hash" class="text-amber-600 mr-3"></i>
-                                <h3 class="text-xl font-playfair font-bold">Sweeven Bites</h3>
+                    <div class="space-y-6" data-aos="fade-up" data-aos-delay="150">
+                        <div class="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+                            <div class="flex items-center gap-3 text-amber-300">
+                                <i data-feather="book-open" class="h-5 w-5"></i>
+                                <p class="text-xs uppercase tracking-[0.35em] text-amber-200/90">Chef Highlights</p>
                             </div>
-                            <div class="space-y-6">
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Potato Waffles</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 600/-</span>
-                                    </div>
-                                    <p class="text-sm text-gray-500">Crispy on the outside, fluffy on the inside waffle fries made from real potatoes.</p>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Masala Fries</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 300/-</span>
-                                    </div>
-                                    <p class="text-sm text-gray-500">Crispy golden fries tossed in our signature spicy masala mix.</p>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Loaded Fries</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 700/-</span>
-                                    </div>
-                                    <p class="text-sm text-gray-500">Fries stacked with melty cheese, sauteed veggies, and creamy sauce for bold flavor in every bite.</p>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Fries with Sausage</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 350/-</span>
-                                    </div>
-                                    <p class="text-sm text-gray-500">Crunchy fries paired with sizzling sausage for a comforting classic.</p>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Sweeven Grill Thrill Chicken Breast</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 800/-</span>
-                                    </div>
-                                    <p class="text-sm text-gray-500">Tender, juicy chicken breast grilled to perfection and seasoned with bold, smoky flavors.</p>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Vegetable Roll</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 400/-</span>
-                                    </div>
-                                    <p class="text-sm text-gray-500">Chapati roll stuffed with seasonal veggies and spiced relish.</p>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Fries Roll</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 350/-</span>
-                                    </div>
-                                    <p class="text-sm text-gray-500">Crispy fries wrapped in chapati with tangy sauces.</p>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Sausage (2 pcs)</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 150/-</span>
-                                    </div>
-                                    <p class="text-sm text-gray-500">Two juicy sausages, grilled and served hot for simple, satisfying flavor.</p>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Garden Salad</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 450/-</span>
-                                    </div>
-                                    <p class="text-sm text-gray-500">Crisp lettuce, cherry tomatoes, carrots, cucumber, and avocado for a refreshing bite.</p>
-                                </div>
+                            <h3 class="mt-4 text-2xl font-playfair">Signature Pairings</h3>
+                            <p class="mt-3 text-sm text-slate-200/80">
+                                Explore wraps, mandazi bites, and decadent desserts designed for easy all-day dining.
+                            </p>
+                            <ul class="mt-5 space-y-3 text-sm text-slate-200/70">
+                                <li class="flex items-start gap-3">
+                                    <span class="mt-1 h-2 w-2 rounded-full bg-amber-300"></span>
+                                    Mama Sweeven chapati wraps with slow-braised fillings.
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="mt-1 h-2 w-2 rounded-full bg-amber-300"></span>
+                                    Loaded mandazi classics sweetened with house sauces.
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="mt-1 h-2 w-2 rounded-full bg-amber-300"></span>
+                                    Daily chef bakes highlighting local produce.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+                            <div class="flex items-center gap-3 text-amber-300">
+                                <i data-feather="coffee" class="h-5 w-5"></i>
+                                <p class="text-xs uppercase tracking-[0.35em] text-amber-200/90">Brew Bar</p>
                             </div>
+                            <h3 class="mt-4 text-2xl font-playfair">Coffee &amp; Sips</h3>
+                            <p class="mt-3 text-sm text-slate-200/80">
+                                Single-origin Kenyan beans shine across slow-pour brews, craft teas, and refreshing coolers.
+                            </p>
+                            <ul class="mt-5 space-y-3 text-sm text-slate-200/70">
+                                <li class="flex items-start gap-3">
+                                    <span class="mt-1 h-2 w-2 rounded-full bg-amber-300"></span>
+                                    Espresso drinks pulled to order, available hot or iced.
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="mt-1 h-2 w-2 rounded-full bg-amber-300"></span>
+                                    House-made syrups and spice infusions.
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="mt-1 h-2 w-2 rounded-full bg-amber-300"></span>
+                                    Seasonal fruit coolers and heritage teas.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+                            <div class="flex items-center gap-3 text-amber-300">
+                                <i data-feather="users" class="h-5 w-5"></i>
+                                <p class="text-xs uppercase tracking-[0.35em] text-amber-200/90">Perfect For</p>
+                            </div>
+                            <h3 class="mt-4 text-2xl font-playfair">Every Gathering</h3>
+                            <p class="mt-3 text-sm text-slate-200/80">
+                                Whether you're fueling a work session or celebrating with friends, our menu scales with your moment.
+                            </p>
+                            <ul class="mt-5 space-y-3 text-sm text-slate-200/70">
+                                <li class="flex items-start gap-3">
+                                    <span class="mt-1 h-2 w-2 rounded-full bg-amber-300"></span>
+                                    Brunches with hearty breakfast plates and sweet bakes.
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="mt-1 h-2 w-2 rounded-full bg-amber-300"></span>
+                                    Lunch meetings powered by handheld wraps and light bites.
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="mt-1 h-2 w-2 rounded-full bg-amber-300"></span>
+                                    Evening socials featuring desserts and crafted beverages.
+                                </li>
+                            </ul>
                         </div>
                     </div>
-
-                    <!-- Sweeven Sides -->
-                    <div class="w-full md:w-1/3 px-4 mb-8" data-aos="fade-up" data-aos-delay="200">
-                        <div class="bg-white p-6 rounded-lg shadow-md h-full">
-                            <div class="flex items-center mb-6">
-                                <i data-feather="layers" class="text-amber-600 mr-3"></i>
-                                <h3 class="text-xl font-playfair font-bold">Sweeven Sides</h3>
-                            </div>
-                            <div class="space-y-6">
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Plain Chapati</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 50/-</span>
-                                    </div>
-                                    <p class="text-sm text-gray-500">Soft, flaky chapati made fresh daily.</p>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Mandazi</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 40/-</span>
-                                    </div>
-                                    <p class="text-sm text-gray-500">Light, fluffy mandazi fried to a golden finish.</p>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Extra Toppings</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 50/-</span>
-                                    </div>
-                                    <p class="text-sm text-gray-500">Cheese, peppers, sauces, and more to customise your meal.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Pastries -->
-                    <div class="w-full md:w-1/3 px-4 mb-8" data-aos="fade-up">
-                        <div class="bg-white p-6 rounded-lg shadow-md h-full">
-                            <div class="flex items-center mb-6">
-                                <i data-feather="feather" class="text-amber-600 mr-3"></i>
-                                <h3 class="text-xl font-playfair font-bold">Pastries</h3>
-                            </div>
-                            <div class="space-y-6">
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Plain Croissant</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 200/-</span>
-                                    </div>
-                                    <p class="text-sm text-gray-500">Buttery, flaky croissant fresh from the oven.</p>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Carrot Cake</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 290/-</span>
-                                    </div>
-                                    <p class="text-sm text-gray-500">Moist carrot cake layered with cream-cheese frosting.</p>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Chocolate Caramel</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 290/-</span>
-                                    </div>
-                                    <p class="text-sm text-gray-500">Decadent chocolate cake with caramel drizzle.</p>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Coffee Sponge</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 280/-</span>
-                                    </div>
-                                    <p class="text-sm text-gray-500">Light coffee-infused sponge with silky icing.</p>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Lemon Poppy Muffin</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 150/-</span>
-                                    </div>
-                                    <p class="text-sm text-gray-500">Zesty muffin dotted with poppy seeds.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Sweeven Sweet Treats -->
-                    <div class="w-full md:w-1/3 px-4 mb-8" data-aos="fade-up" data-aos-delay="100">
-                        <div class="bg-white p-6 rounded-lg shadow-md h-full">
-                            <div class="flex items-center mb-6">
-                                <i data-feather="heart" class="text-amber-600 mr-3"></i>
-                                <h3 class="text-xl font-playfair font-bold">Sweeven Sweet Treats</h3>
-                            </div>
-                            <div class="space-y-6">
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Ice Cream</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 150/-</span>
-                                    </div>
-                                    <p class="text-sm text-gray-500">Scoop into happiness with creamy, dreamy scoops available in a variety of flavors.</p>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Belgium Chocolate</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 150/-</span>
-                                    </div>
-                                    <p class="text-sm text-gray-500">Silky Belgian chocolate ice cream.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Sweeven Coffees -->
-                    <div class="w-full md:w-1/3 px-4 mb-8" data-aos="fade-up" data-aos-delay="200">
-                        <div class="bg-white p-6 rounded-lg shadow-md h-full">
-                            <div class="flex items-center mb-6">
-                                <i data-feather="coffee" class="text-amber-600 mr-3"></i>
-                                <h3 class="text-xl font-playfair font-bold">Sweeven Coffees</h3>
-                            </div>
-                            <div class="space-y-6">
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Cappuccino (Single)</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 280/-</span>
-                                    </div>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Cappuccino (Double)</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 300/-</span>
-                                    </div>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Latte</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 250/-</span>
-                                    </div>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Espresso (Single)</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 200/-</span>
-                                    </div>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Espresso (Double)</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 280/-</span>
-                                    </div>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Americano</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 200/-</span>
-                                    </div>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Café Mocha</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 250/-</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <p class="text-sm text-gray-500 italic">All coffees available iced on request.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Beverages -->
-                    <div class="w-full md:w-1/3 px-4 mb-8" data-aos="fade-up">
-                        <div class="bg-white p-6 rounded-lg shadow-md h-full">
-                            <div class="flex items-center mb-6">
-                                <i data-feather="droplet" class="text-amber-600 mr-3"></i>
-                                <h3 class="text-xl font-playfair font-bold">Beverages</h3>
-                            </div>
-                            <div class="space-y-6">
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Kenyan Tea</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 200/-</span>
-                                    </div>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Hibiscus Iced Tea</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 200/-</span>
-                                    </div>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Passion Juice</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 150/-</span>
-                                    </div>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Tropical Juice</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 150/-</span>
-                                    </div>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Pineapple Mint</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 150/-</span>
-                                    </div>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Milkshake</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 400/-</span>
-                                    </div>
-                                    <p class="text-sm text-gray-500">Thick, creamy, and blended just right. Choose your favorite flavor and sip your way to dessert heaven.</p>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Sodas</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 100/-</span>
-                                    </div>
-                                </div>
-                                <div class="border-b border-gray-100 pb-4">
-                                    <div class="flex justify-between mb-1">
-                                        <h4 class="font-medium">Mineral Water</h4>
-                                        <span class="text-amber-600 font-medium">Ksh 100/-</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center mt-10" data-aos="fade-up">
-                    <a href="https://wa.me/254727707399" target="_blank" rel="noopener noreferrer" class="px-8 py-3 bg-amber-600 hover:bg-amber-700 text-white rounded-full font-medium transition inline-block">WhatsApp Your Order</a>
                 </div>
             </div>
         </section>
-
         <!-- Gallery Section -->
         <section id="gallery" class="py-20 bg-white">
             <div class="container mx-auto px-6">

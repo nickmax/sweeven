@@ -1,0 +1,325 @@
+{
+  "categories": [
+    {
+      "id": "sweeven-favorites",
+      "title": "Sweeven Favorites",
+      "icon": "star",
+      "items": [
+        {
+          "id": "mama-sweeven-chapati-chicken-wrap",
+          "name": "Mama Sweeven Chapati Chicken Wrap",
+          "price": 400,
+          "description": "Slow cooked pulled chicken breast in tomato sauce, served with golden chips."
+        },
+        {
+          "id": "mama-sweeven-chapati-beef-wrap",
+          "name": "Mama Sweeven Chapati Beef Wrap",
+          "price": 450,
+          "description": "Slow cooked pulled beef in a rich house sauce with chips on the side."
+        },
+        {
+          "id": "loaded-pulled-beef-mandazi",
+          "name": "Loaded Pulled Beef Mandazi",
+          "price": 450,
+          "description": "Signature mandazi stacked with tender pulled beef and chef toppings."
+        },
+        {
+          "id": "loaded-pulled-chicken-mandazi",
+          "name": "Loaded Pulled Chicken Mandazi",
+          "price": 400,
+          "description": "Mandazi piled high with pulled chicken in tomato sauce plus toppings."
+        }
+      ]
+    },
+    {
+      "id": "breakfast-options",
+      "title": "Breakfast Options",
+      "icon": "sunrise",
+      "items": [
+        {
+          "id": "sweeven-breakfast",
+          "name": "Sweeven Breakfast",
+          "price": 600,
+          "description": "Perfectly cooked eggs, crispy bacon, golden toast, savory sausage, and a touch of butter to start your day right."
+        },
+        {
+          "id": "potato-waffles",
+          "name": "Potato Waffles",
+          "price": 600,
+          "description": "Crispy on the outside, fluffy on the inside waffle fries made from real potatoes."
+        },
+        {
+          "id": "mandazi-breakfast",
+          "name": "Mandazi",
+          "price": 300,
+          "description": "Light, fluffy mandazi fried to a golden finish."
+        },
+        {
+          "id": "chapati-platter",
+          "name": "Chapati",
+          "price": 700,
+          "description": "Soft, flaky chapati made fresh daily."
+        },
+        {
+          "id": "spanish-omelette",
+          "name": "Spanish Omelette",
+          "price": 700,
+          "description": "Fluffy eggs folded with green peppers, red onions, and ripe tomatoes."
+        },
+        {
+          "id": "egg-bacon-wrap",
+          "name": "Egg Bacon Wrap",
+          "price": 300,
+          "description": "Fluffy scrambled eggs, crispy bacon, and juicy tomatoes wrapped in a warm tortilla."
+        }
+      ]
+    },
+    {
+      "id": "sweeven-bites",
+      "title": "Sweeven Bites",
+      "icon": "hash",
+      "items": [
+        {
+          "id": "masala-fries",
+          "name": "Masala Fries",
+          "price": 300,
+          "description": "Crispy golden fries tossed in our signature spicy masala mix."
+        },
+        {
+          "id": "loaded-fries",
+          "name": "Loaded Fries",
+          "price": 700,
+          "description": "Fries stacked with melty cheese, sauteed veggies, and creamy sauce."
+        },
+        {
+          "id": "fries-with-sausage",
+          "name": "Fries with Sausage",
+          "price": 350,
+          "description": "Crunchy fries paired with sizzling sausage for a comforting classic."
+        },
+        {
+          "id": "sweeven-grill-thrill-chicken-breast",
+          "name": "Sweeven Grill Thrill Chicken Breast",
+          "price": 800,
+          "description": "Tender, juicy chicken breast grilled to perfection with bold, smoky flavors."
+        },
+        {
+          "id": "vegetable-roll",
+          "name": "Vegetable Roll",
+          "price": 400,
+          "description": "Chapati roll stuffed with seasonal veggies and spiced relish."
+        },
+        {
+          "id": "fries-roll",
+          "name": "Fries Roll",
+          "price": 350,
+          "description": "Crispy fries wrapped in chapati with tangy sauces."
+        },
+        {
+          "id": "sausage-2pcs",
+          "name": "Sausage (2 pcs)",
+          "price": 150,
+          "description": "Two juicy sausages, grilled and served hot for simple, satisfying flavor."
+        },
+        {
+          "id": "garden-salad",
+          "name": "Garden Salad",
+          "price": 450,
+          "description": "Crisp lettuce, cherry tomatoes, carrots, cucumber, and avocado."
+        }
+      ]
+    },
+    {
+      "id": "sweeven-sides",
+      "title": "Extra Toppings",
+      "icon": "plus-circle",
+      "items": [
+        {
+          "id": "extra-cheese",
+          "name": "Cheese Add-on",
+          "price": 80,
+          "description": "Add a melty layer of cheese to any meal."
+        },
+        {
+          "id": "extra-bacon",
+          "name": "Bacon Add-on",
+          "price": 80,
+          "description": "Crispy bacon strips to boost the savoury flavour."
+        },
+        {
+          "id": "extra-chicken",
+          "name": "Chicken Add-on",
+          "price": 150,
+          "description": "Grilled chicken upgrade for extra protein."
+        }
+      ]
+    },
+    {
+      "id": "pastries",
+      "title": "Pastries",
+      "icon": "feather",
+      "items": [
+        {
+          "id": "plain-croissant",
+          "name": "Plain Croissant",
+          "price": 200,
+          "description": "Buttery, flaky croissant fresh from the oven."
+        },
+        {
+          "id": "carrot-cake",
+          "name": "Carrot Cake",
+          "price": 310,
+          "description": "Moist carrot cake layered with cream-cheese frosting."
+        },
+        {
+          "id": "chocolate-caramel",
+          "name": "Chocolate Caramel",
+          "price": 310,
+          "description": "Decadent chocolate cake with caramel drizzle."
+        },
+        {
+          "id": "coffee-sponge",
+          "name": "Coffee Sponge",
+          "price": 300,
+          "description": "Light coffee-infused sponge with silky icing."
+        },
+        {
+          "id": "lemon-poppy-muffin",
+          "name": "Lemon Poppy Muffin",
+          "price": 150,
+          "description": "Zesty muffin dotted with poppy seeds."
+        }
+      ]
+    },
+    {
+      "id": "sweeven-sweet-treats",
+      "title": "Sweeven Sweet Treats",
+      "icon": "heart",
+      "items": [
+        {
+          "id": "ice-cream",
+          "name": "Ice Cream",
+          "price": 150,
+          "description": "Creamy scoops available in a variety of flavors."
+        },
+        {
+          "id": "belgium-chocolate",
+          "name": "Belgium Chocolate",
+          "price": 150,
+          "description": "Silky Belgian chocolate ice cream."
+        }
+      ]
+    },
+    {
+      "id": "sweeven-coffees",
+      "title": "Sweeven Coffees",
+      "icon": "coffee",
+      "note": "All coffees available iced on request.",
+      "items": [
+        {
+          "id": "cappuccino-single",
+          "name": "Cappuccino (Single)",
+          "price": 280,
+          "description": ""
+        },
+        {
+          "id": "cappuccino-double",
+          "name": "Cappuccino (Double)",
+          "price": 300,
+          "description": ""
+        },
+        {
+          "id": "latte-single",
+          "name": "Latte (Single)",
+          "price": 280,
+          "description": ""
+        },
+        {
+          "id": "latte-double",
+          "name": "Latte (Double)",
+          "price": 300,
+          "description": ""
+        },
+        {
+          "id": "espresso-single",
+          "name": "Espresso (Single)",
+          "price": 200,
+          "description": ""
+        },
+        {
+          "id": "espresso-double",
+          "name": "Espresso (Double)",
+          "price": 280,
+          "description": ""
+        },
+        {
+          "id": "americano",
+          "name": "Americano",
+          "price": 200,
+          "description": ""
+        },
+        {
+          "id": "cafe-mocha",
+          "name": "Café Mocha",
+          "price": 300,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "id": "beverages",
+      "title": "Beverages",
+      "icon": "droplet",
+      "items": [
+        {
+          "id": "kenyan-tea",
+          "name": "Kenyan Tea",
+          "price": 200,
+          "description": ""
+        },
+        {
+          "id": "hibiscus-iced-tea",
+          "name": "Hibiscus Iced Tea",
+          "price": 200,
+          "description": ""
+        },
+        {
+          "id": "passion-juice",
+          "name": "Passion Juice",
+          "price": 150,
+          "description": ""
+        },
+        {
+          "id": "tropical-juice",
+          "name": "Tropical Juice",
+          "price": 150,
+          "description": ""
+        },
+        {
+          "id": "pineapple-mint",
+          "name": "Pineapple Mint",
+          "price": 150,
+          "description": ""
+        },
+        {
+          "id": "milkshake",
+          "name": "Milkshake",
+          "price": 400,
+          "description": "Thick, creamy, and blended just right. Choose your favorite flavor."
+        },
+        {
+          "id": "sodas",
+          "name": "Sodas",
+          "price": 100,
+          "description": ""
+        },
+        {
+          "id": "mineral-water",
+          "name": "Mineral Water",
+          "price": 100,
+          "description": ""
+        }
+      ]
+    }
+  ]
+}
